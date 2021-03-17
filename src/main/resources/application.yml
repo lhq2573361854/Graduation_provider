@@ -1,0 +1,30 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: nacos-provider-client
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      port: 35729
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.43.20:8848 # 注册中心
+  cache:
+    type: redis
+  r2dbc:
+    url: r2dbcs:mysql://192.168.43.20:3306/vuelog
+    username: root
+    password: root
+  redis:
+    host: 192.168.43.20
+    password: root
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+logging:
+  level:
+    com.tianling.service.impl: debug
