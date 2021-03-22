@@ -1,7 +1,5 @@
 package com.test;
 
-import com.google.common.collect.Maps;
-
 /**
  * @author Tianling
  * @email 859073143@qq.com
@@ -9,6 +7,5 @@ import com.google.common.collect.Maps;
  */
 public class Test {
     public static void main(String[] args) {
-
     }
 }

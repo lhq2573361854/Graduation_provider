@@ -27,6 +27,7 @@ public interface ICommentService{
      */
     Mono<ResponseInfo<Comment>> getCommentByUserName(String userName);
 
+
     /**
      * 通过用户的id获取评论信息
      * @param id
@@ -91,4 +92,11 @@ public interface ICommentService{
      * @return
      */
     Mono<ResponseInfo<Integer>> getCommentTotalByArticleId(Integer articleId);
+
+    /**
+     * 通过用户id获取评论
+     * @param userId
+     * @return
+     */
+    Mono<ResponseInfo<Comment>> getCommentsByUserId(Integer userId);
 }

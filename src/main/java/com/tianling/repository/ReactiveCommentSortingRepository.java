@@ -43,6 +43,13 @@ public interface ReactiveCommentSortingRepository extends ReactiveSortingReposit
     Flux<Comment> getCommentByCommentArticleId(Integer commentArticleId);
 
     /**
+     * 通过用户id获取评论信息
+     * @param commentUserId
+     * @return
+     */
+    Flux<Comment> getCommentsByCommentUserId(Integer commentUserId);
+
+    /**
      * 通过用户名查找用户评论
      * @param userName
      * @return

@@ -36,6 +36,11 @@ public class ArticleController {
         return iArticleService.getAllArticle();
     }
 
+    @GetMapping("/getArticlesByUserId/{userId}")
+    public Mono<ResponseInfo<Article>> getArticlesByUserId(@PathVariable Integer userId) {
+        return iArticleService.getArticlesByUserId(userId);
+    }
+
     @GetMapping("/getAllArticleTotal")
     public Mono<ResponseInfo<Integer>> getAllArticleTotal() {
         return iArticleService.getAllArticleTotal();

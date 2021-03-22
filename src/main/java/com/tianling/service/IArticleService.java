@@ -105,4 +105,13 @@ public interface IArticleService {
      * @return
      */
     Mono<ResponseInfo<Article>> getPageArticleByCategoryName(Pagination pagination, String categoryName);
+
+
+
+    /**
+     * 通过用户id查询文章
+     * @param  userId
+     * @return
+     */
+    Mono<ResponseInfo<Article>> getArticlesByUserId(Integer userId);
 }

@@ -35,6 +35,11 @@ public class CommentController{
         return commentService.getCommentByUserName(userName);
     }
 
+    @GetMapping("/getCommentsByUserId/{userId}")
+    public Mono<ResponseInfo<Comment>> getCommentsByUserId(@PathVariable Integer userId){
+        return commentService.getCommentsByUserId(userId);
+    }
+
     @GetMapping("/getPageCommentByArticleId/{articleId}")
     public Mono<ResponseInfo<Comment>> getPageCommentByArticleId(Pagination pagination ,@PathVariable Integer articleId) {
         return commentService.getPaginationByArticleId(articleId,pagination);

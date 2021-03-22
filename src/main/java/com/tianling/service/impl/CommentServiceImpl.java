@@ -64,6 +64,11 @@ public class CommentServiceImpl implements ICommentService {
                 .defaultIfEmpty(HttpResponseMessageUtils.queryFailedCommonResponse(ExceptionMessage.IDNOTEXSITPARAMETERIZATION));
     }
 
+    @Override
+    public Mono<ResponseInfo<Comment>> getCommentsByUserId(Integer userId) {
+        return HttpResponseMessageUtils.querySuccessResponse(reactiveCommentSortingRepository.getCommentsByCommentUserId(userId));
+    }
+
 
     @ReactiveRedisCacheable(cacheName = BASENAME,key = "'id_' + #id.toString()")
     @Override

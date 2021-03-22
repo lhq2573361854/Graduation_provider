@@ -149,4 +149,9 @@ public class ArticleServiceImpl implements IArticleService {
         return HttpResponseMessageUtils.querySuccessResponse(reactiveArticleSortingRepository.getArticlesByCategoryName(categoryName).skip((long) (pagination.getPage() - 1) * pagination.getPageShowNumber()).take(pagination.getPageShowNumber()));
 
     }
+
+    @Override
+    public Mono<ResponseInfo<Article>> getArticlesByUserId(Integer userId) {
+        return HttpResponseMessageUtils.querySuccessResponse(reactiveArticleSortingRepository.getArticlesByUserId(userId));
+    }
 }

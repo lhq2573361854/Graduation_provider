@@ -28,6 +28,14 @@ public interface ReactiveArticleSortingRepository extends ReactiveSortingReposit
     Flux<Article> getArticleByUserName(String userName);
 
     /**
+     * 查询用户的文章信息通过用户id
+     * @param userId
+     * @return
+     */
+    Flux<Article> getArticlesByUserId(Integer userId);
+
+
+    /**
      * 通过用户名删除用户的文章
      * @param userName
      * @return
